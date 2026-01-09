@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tompkins Lost and Found</title>
+    <!-- Meta tags provide page info for search engines and browsers -->
+    <meta name="description" content="Official Lost and Found service for Tompkins High School. Register, search, and claim lost items like IDs, phones, and clothing. Search through our library to find any items you've misplaced. and remember, no item is too small.">
+    <meta name="keywords" content="Tompkins, High School, Lost and Found, Katy ISD, lost items, claim, register, Tompkins Trove">
+    <meta name="author" content="Shardul Nikam, Santiago Godoy, ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Banner with logo -->
+    <div class="banner">
+        <img src="tompkinstrove.png" alt="TT Lost and Found Logo" class="logo">
+    </div>
+
+    <!-- Main content wrapper -->
+    <div class="content-wrapper">
+        <header>
+            <h1>Welcome to Tompkins Trove</h1>
+            <p class="intro-text">Here, users can register, look for, and claim items they have lost at Tompkins High School.</p>
+        </header>
+
+        <!-- Section with register and claim buttons -->
+        <section class="register-section">
+            <a href="C:\Users\K2428302\Desktop\registration.html" target="_blank" class="register-button">
+                Register Your Item Here
+            </a>
+            <a href="http://localhost/pinemill/gallery.php" class="register-button claim-button">
+                Claim Item
+            </a>
+        </section>
+
+        <!-- Section with school image -->
+        <section class="image-section">
+            <img src="https://digengineers.com/wp-content/uploads/2023/02/tompkins-hero-3024x1596.jpg" alt="Scenic image of the Pine Mill Ranch community or a relevant landmark">
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p> Tompkins Trove. All rights reserved. Lost and Found Service for Tompkins High School.</p>
+    </footer>
+</body>
+
+<style>
+/* Reset margins/padding for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define theme colors and fonts */
+:root {
+    --primary-color: #0f2c52; /* Dark Blue */
+    --secondary-color: #0a1f3a; /* Darker Blue */
+    --accent-color: #bf2a2e;   /* Red accent */
+    --text-color: #ffffff;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Open Sans', sans-serif;
+}
+
+/* Page background and border */
+html {
+    background-color: var(--primary-color);
+    border: 8px solid var(--accent-color);
+    min-height: 100%;
+}
+
+/* Body text styling */
+body {
+    background-color: var(--primary-color);
+    font-family: var(--font-sans);
+    color: var(--text-color);
+}
+
+/* Center content and add spacing */
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Heading styles */
+h1 {
+    font-family: var(--font-serif);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+/* Intro text under heading */
+.intro-text {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* Banner background and logo */
+.banner {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background-color: var(--secondary-color);
+}
+
+.logo {
+    max-width: 300px;
+    height: auto;
+    display: inline-block;
+}
+
+/* Register/Claim buttons section */
+.register-section {
+    text-align: center;
+    margin: 40px 0;
+    display: flex; 
+    justify-content: center;
+    gap: 20px; 
+    flex-wrap: wrap; /* Wrap buttons on smaller screens */
+}
+
+/* Button styling */
+.register-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.25em;
+    border-radius: 8px;
+    transition: background-color 1s ease, transform 0.1s ease;
+    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Button hover effect */
+.register-button:hover {
+    background-color: red;
+}
+
+/* Image section styling */
+.image-section {
+    margin-top: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    .register-button {
+        font-size: 1.1em;
+        padding: 12px 20px;
+    }
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 0.9em;
+    border-top: 4px solid black;
+}
+</style>
+</html>
