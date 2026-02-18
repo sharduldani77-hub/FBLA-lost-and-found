@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tompkins Trove</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #a32036;
+  color: white;
+  overflow-x: hidden;
+}
+
+a { 
+  color: white; 
+  text-decoration: none; 
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover { 
+  color: #a32036;
+}
+
+.dropdown-toggle:hover {
+  color: #a32036;
+}
+
+footer a:hover {
+  color: #a32036;
+}
+
+/* ---------- NAV BAR ---------- */
+.homerow {
+  background-color: #0f2d52;
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.falcon {
+  width: 70px;
+  margin-right: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  white-space: nowrap;
+  margin-right: 25px;
+}
+
+.nav {
+  margin-left: auto;
+  display: flex;
+  gap: 40px;
+  font-size: 18px;
+}
+
+/* Dropdown */
+.dropdown { position: relative; cursor: pointer; }
+.dropdown-content {
+  position: absolute;
+  background-color: #163b6b;
+  min-width: 180px;
+  top: 30px;
+  padding: 10px 0;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.25s;
+  border-bottom: 3px solid #a32036;
+  pointer-events: none;
+}
+.dropdown.active .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.dropdown-content a {
+  display: block;
+  padding: 8px 15px;
+  color: white;
+}
+
+/* ---------- PAGE SECTIONS ---------- */
+.founders {
+  background-color: #a32036;
+  height: 80px;
+  text-align: center;
+}
+
+.founders h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+}
+
+.foundersdescription {
+  background-color: #a32036;
+  text-align: center;
+}
+
+.foundersdescription p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 18px;
+}
+
+.V1pics {
+  max-width: 750px;
+  display: block;
+  margin: 20px auto;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="homerow">
+  <div class="brand">
+    <img class="falcon" src="https://resources.finalsite.net/images/f_auto,q_auto/v1744117969/katyisdorg/n6duhj5lz2w1wch9b1ae/oths.png" alt="Tompkins Logo">
+    <span class="brand-title"><a href="http://localhost/pinemill/homepage.html">Tompkins Trove</a></span>
+  </div>
+
+  <div class="nav">
+    <div class="dropdown">
+      <span class="dropdown-toggle">ABOUT US</span>
+      <div class="dropdown-content">
+        <a href="http://localhost/pinemill/Story.html">Our Story</a>
+        <a href="http://localhost/pinemill/Mission.html">Our Mission</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <span class="dropdown-toggle">FORMS</span>
+      <div class="dropdown-content">
+        <a href="http://localhost/pinemill/index.html">Registration</a>
+        <a href="http://localhost/pinemill/Feedback.html">Feedback</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <span class="dropdown-toggle">GALLERIES</span>
+      <div class="dropdown-content">
+        <a href="gallery.php">Gallery</a>
+        <a href="archive.php">Archive</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="founders">
+  <h2>Our Story</h2>
+</div>
+
+<div>
+  <img src="Founders.jpg" alt="founders" width="100%">
+</div>
+
+<div class="foundersdescription">
+  <br><br>
+  <p>Months ago, at the beginning of October, we joined to form the FBLA team responsible for the very website you are being presented with. After signing up for this event, we got to work brainstorming ideas, designing, and programming. We eventually came up with a simple system of three pages: a homepage, a registration page, and a gallery for the items. Using a combination of HTML, CSS, JavaScript, and PHP, we created a basic, functional lost and found site. This site eventually came to be known as V1.</p>
+
+  <br><br><br>
+  <img class="V1pics" src="V1 Homepage.png" alt="V1 Homepage">
+
+  <p>The initial homepage came with a small yet warm welcome, a description, the most primitive version of the navigation bar, and the most patriotic image of the school we could find.</p>
+
+  <br><br>
+  <img class="V1pics" src="V1 Registration.png" alt="V1 Registration">
+
+  <p>The registration page had many fields—some admittedly unnecessary—and some solid stylization.</p>
+
+  <br><br>
+  <img class="V1pics" src="V1 Gallery.png" alt="V1 Gallery">
+
+  <p>The gallery prototype shown above is similar to the homepage, with its warm welcome and description. How it worked, though, was the most unique part of the website. After an item was registered, anybody could “claim” it. It would give you a message telling you to go to the front office. Despite claiming it, the entry wouldn’t disappear until the item was physically given away. This meant the system was functional but weak—so we changed it.</p>
+
+  <br><br>
+  <p>To recap: the site was functional but basic. After receiving feedback from judges at the Area V competition and earning the opportunity to present at our state leadership conference, we began improving the website.</p>
+
+  <br><br>
+  <p>Accessibility became the focus of the redesign. We polished the interface, added a navigation bar, implemented stronger design principles, reworked the registration process, refined the gallery search engine, and completely rebuilt the claim process. We also added new features such as a feedback page, an archive of every item ever registered, and an instructional video. All of this and more comes in the new and improved:</p>
+
+  <br>
+  <h2 style="font-family: 'Playfair Display', serif; font-size: 75px; font-weight: 700;">Tompkins Trove: V2</h2>
+  <br>
+</div>
+
+<footer>
+  <a href="Story.html">Information</a>
+  <a href="index.html">Registration Page</a>
+  <a href="gallery.php">Gallery</a>
+  <a href="Feedback.html">Feedback</a>
+</footer>
+
+<script>
+// Dropdowns
+const dropdowns = document.querySelectorAll(".dropdown");
+dropdowns.forEach(d => {
+  d.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
+    e.stopPropagation();
+    d.classList.toggle("active");
+  });
+});
+document.addEventListener("click", () => dropdowns.forEach(d => d.classList.remove("active")));
+</script>
+
+</body>
+</html>
+
+
+
