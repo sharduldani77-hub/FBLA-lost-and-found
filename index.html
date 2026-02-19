@@ -3,12 +3,16 @@
 <head>
 <meta charset="utf-8">
 <title>Tompkins Trove</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Ensures proper scaling on all phones, including landscape -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- GLOBAL ---------- */
+/* ---------------- GLOBAL STYLES ---------------- */
+/* Basic page setup */
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -23,18 +27,10 @@ a {
   transition: color 0.2s ease-in-out;
 }
 
-a:hover { 
-  color: #a32036;
-}
+a:hover { color: #a32036; }
 
-.dropdown-toggle:hover {
-  color: #a32036;
-}
-
-footer a:hover {
-  color: #a32036;
-}
-/* ---------- MOBILE FIXES ---------- */
+/* ---------------- MOBILE RESPONSIVENESS ---------------- */
+/* These rules help the layout stay readable on small screens */
 @media (max-width: 700px) {
 
   .homerow {
@@ -95,141 +91,14 @@ footer a:hover {
     width: 100%;
   }
 
-  .how-to-left h2 {
-    font-size: 32px;
-  }
-
   footer {
     flex-direction: column;
     text-align: center;
     gap: 10px;
   }
 }
-  /* ---------- GLOBAL MOBILE TEXT RESIZING ---------- */
-@media (max-width: 700px) {
 
-  body {
-    font-size: 14px;
-  }
-
-  h1, h2, h3 {
-    font-size: 90%;
-  }
-
-  p, a, span, li, button {
-    font-size: 90%;
-  }
-
-  .brand-title {
-    font-size: 22px;
-  }
-
-  .nav {
-    font-size: 14px;
-  }
-
-  .welcome h2 {
-    font-size: 26px;
-  }
-
-  .welcome p {
-    font-size: 15px;
-  }
-
-  .review-box {
-    font-size: 18px;
-  }
-
-  .how-to-left h2 {
-    font-size: 30px;
-  }
-
-  footer {
-    font-size: 14px;
-  }
-}
-
-/* ---------- FULL MOBILE LAYOUT FIX ---------- */
-@media (max-width: 700px) {
-
-  /* NAVBAR */
-  .homerow {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-
-  .brand-title {
-    font-size: 24px;
-  }
-
-  .nav {
-    margin-left: 0;
-    margin-top: 10px;
-    gap: 20px;
-    flex-wrap: wrap;
-    font-size: 16px;
-  }
-
-  /* WELCOME SECTION */
-  .welcome {
-    height: auto;
-    padding: 25px 20px;
-  }
-
-  .welcome h2 {
-    font-size: 28px;
-  }
-
-  .welcome p {
-    font-size: 16px;
-  }
-
-  /* MAIN SECTION */
-  .main {
-    flex-direction: column;
-  }
-
-  .slideshow,
-  .reviews {
-    width: 100%;
-    height: auto;
-  }
-
-  .slide img {
-    height: 250px;
-    object-fit: cover;
-  }
-
-  .reviews {
-    padding: 20px;
-  }
-
-  .review-box {
-    font-size: 18px;
-  }
-
-  /* HOW-TO SECTION */
-  .how-to-section {
-    flex-direction: column;
-    padding: 30px 20px;
-  }
-
-  .how-to-left h2 {
-    font-size: 30px;
-  }
-
-  /* FOOTER */
-  footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-    font-size: 14px;
-  }
-}
-
-
-/* ---------- NAV BAR ---------- */
+/* ---------------- NAV BAR ---------------- */
 .homerow {
   background-color: #0f2d52;
   display: flex;
@@ -263,7 +132,7 @@ footer a:hover {
   font-size: 18px;
 }
 
-/* Dropdown */
+/* Dropdown styling */
 .dropdown { position: relative; cursor: pointer; }
 .dropdown-content {
   position: absolute;
@@ -289,7 +158,7 @@ footer a:hover {
   color: white;
 }
 
-/* ---------- WELCOME SECTION ---------- */
+/* ---------------- WELCOME SECTION ---------------- */
 .welcome {
   background-color: #a32036;
   height: 225px;
@@ -306,7 +175,7 @@ footer a:hover {
   font-size: 18px;
 }
 
-/* ---------- MAIN CONTENT ---------- */
+/* ---------------- MAIN CONTENT ---------------- */
 .main {
   display: flex;
   min-height: 400px;
@@ -372,7 +241,7 @@ footer a:hover {
   cursor: pointer;
 }
 
-/* ---------- HOW TO SECTION ---------- */
+/* ---------------- HOW TO SECTION ---------------- */
 .how-to-section {
   display: flex;
   padding: 60px;
@@ -403,7 +272,7 @@ footer a:hover {
   height: 100%;
 }
 
-/* ---------- FOOTER ---------- */
+/* ---------------- FOOTER ---------------- */
 footer {
   background-color: black;
   display: flex;
@@ -416,67 +285,79 @@ footer {
 
 <body>
 
-<div class="homerow">
+<!-- NAVIGATION BAR -->
+<nav class="homerow" role="navigation" aria-label="Main Navigation">
   <div class="brand">
-    <img class="falcon" src="https://resources.finalsite.net/images/f_auto,q_auto/v1744117969/katyisdorg/n6duhj5lz2w1wch9b1ae/oths.png" alt="Tompkins Logo">
+    <img class="falcon" src="https://resources.finalsite.net/images/f_auto,q_auto/v1744117969/katyisdorg/n6duhj5lz2w1wch9b1ae/oths.png" alt="Tompkins High School Logo">
     <span class="brand-title"><a href="index.html">Tompkins Trove</a></span>
   </div>
 
   <div class="nav">
-    <div class="dropdown">
-      <span class="dropdown-toggle">ABOUT US</span>
-      <div class="dropdown-content">
-        <a href="Story.html">Our Story</a>
-        <a href="Mission.html">Our Mission</a>
+
+    <!-- About dropdown -->
+    <div class="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="dropdown-toggle" role="button" aria-label="About Us Menu">ABOUT US</span>
+      <div class="dropdown-content" role="menu">
+        <a href="Story.html" role="menuitem">Our Story</a>
+        <a href="Mission.html" role="menuitem">Our Mission</a>
       </div>
     </div>
 
-    <div class="dropdown">
-      <span class="dropdown-toggle">FORMS</span>
-      <div class="dropdown-content">
-        <a href="registration.html">Registration</a>
-        <a href="Feedback.html">Feedback</a>
+    <!-- Forms dropdown -->
+    <div class="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="dropdown-toggle" role="button" aria-label="Forms Menu">FORMS</span>
+      <div class="dropdown-content" role="menu">
+        <a href="registration.html" role="menuitem">Registration</a>
+        <a href="Feedback.html" role="menuitem">Feedback</a>
       </div>
     </div>
 
-    <div class="dropdown">
-      <span class="dropdown-toggle">GALLERIES</span>
-      <div class="dropdown-content">
-        <a href="gallery.php">Gallery</a>
-        <a href="archive.php">Archive</a>
+    <!-- Galleries dropdown -->
+    <div class="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="dropdown-toggle" role="button" aria-label="Galleries Menu">GALLERIES</span>
+      <div class="dropdown-content" role="menu">
+        <a href="gallery.php" role="menuitem">Gallery</a>
+        <a href="archive.php" role="menuitem">Archive</a>
       </div>
     </div>
+
   </div>
-</div>
+</nav>
 
-<div class="welcome">
+<!-- WELCOME SECTION -->
+<section class="welcome" aria-label="Welcome Section">
   <h2>Welcome to Tompkins Trove</h2>
   <p>Here, you can register, claim, and look at items lost around the school. To register an item, click on the registration form and fill out all fields. To look at and claim items, go to the Gallery.</p>
-</div>
+</section>
 
-<div class="main">
-  <div class="slideshow">
-    <div class="slide active"><img src="TompkinsSign.png" alt="School 1"></div>
-    <div class="slide"><img src="TompkinsSchool.png" alt="School 2"></div>
+<!-- MAIN CONTENT -->
+<section class="main" aria-label="Main Content Area">
+
+  <!-- Slideshow -->
+  <div class="slideshow" aria-label="School Image Slideshow">
+    <div class="slide active"><img src="TompkinsSign.png" alt="Tompkins High School Sign"></div>
+    <div class="slide"><img src="TompkinsSchool.png" alt="Tompkins High School Building"></div>
   </div>
 
-  <div class="reviews">
+  <!-- Reviews -->
+  <div class="reviews" aria-label="User Reviews">
     <div class="review-box" id="reviewText">“This site makes finding lost items so much easier!”</div>
     <div style="text-align: center; margin-bottom: 20px;">- Mr. Robertson</div>
 
     <div class="review-controls">
-      <span onclick="prevReview()">&lt;</span>
+      <span onclick="prevReview()" aria-label="Previous Review" role="button">&lt;</span>
       <h2 class="reviewtitle">Reviews</h2>
-      <span onclick="nextReview()">&gt;</span>
+      <span onclick="nextReview()" aria-label="Next Review" role="button">&gt;</span>
     </div>
 
-    <button class="feedback-btn">
+    <button class="feedback-btn" aria-label="Leave Feedback Button">
       <a href="Feedback.html">Leave Feedback</a>
     </button>
   </div>
-</div>
+</section>
 
-<div class="how-to-section">
+<!-- HOW TO SECTION -->
+<section class="how-to-section" aria-label="How to Use the Website">
   <div class="how-to-left">
     <h2>How to use our website</h2>
     <p style="text-align: center;">This instructional video goes over how to use our website and what to do in person.</p>
@@ -484,12 +365,13 @@ footer {
 
   <div class="how-to-right">
     <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/2ulp_AMut14" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/2ulp_AMut14" title="Instructional Video" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
-</div>
+</section>
 
-<footer>
+<!-- FOOTER -->
+<footer role="contentinfo" aria-label="Footer Navigation">
   <a href="Story.html">Information</a>
   <a href="registration.html">Registration Page</a>
   <a href="gallery.php">Gallery</a>
@@ -497,7 +379,8 @@ footer {
 </footer>
 
 <script>
-// Slideshow
+// ---------------- SLIDESHOW ----------------
+// Simple slideshow that fades between images
 let slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
 setInterval(() => {
@@ -506,7 +389,8 @@ setInterval(() => {
   slides[currentSlide].classList.add("active");
 }, 4000);
 
-// Reviews
+// ---------------- REVIEWS ----------------
+// Rotates through review quotes
 const reviews = [
   "“This site makes finding lost items so much easier!”",
   "“Very organized and easy to use.”",
@@ -525,19 +409,21 @@ function prevReview() {
   reviewText.textContent = reviews[reviewIndex];
 }
 
-// Dropdowns
+// ---------------- DROPDOWNS ----------------
+// Basic dropdown toggle logic
 const dropdowns = document.querySelectorAll(".dropdown");
 dropdowns.forEach(d => {
   d.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
     e.stopPropagation();
     d.classList.toggle("active");
+    d.setAttribute("aria-expanded", d.classList.contains("active"));
   });
 });
-document.addEventListener("click", () => dropdowns.forEach(d => d.classList.remove("active")));
+document.addEventListener("click", () => dropdowns.forEach(d => {
+  d.classList.remove("active");
+  d.setAttribute("aria-expanded", "false");
+}));
 </script>
 
 </body>
 </html>
-
-
-
