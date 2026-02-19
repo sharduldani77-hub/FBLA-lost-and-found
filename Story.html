@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8">
 
-<!-- Simple, clean metadata -->
+<!-- Basic metadata for SEO and clarity -->
 <meta name="description" content="Learn the story behind Tompkins Trove, the official lost and found system for Tompkins High School.">
 <meta name="keywords" content="Tompkins Trove, Tompkins High School, Lost and Found, OTHS, Katy ISD">
 <meta name="author" content="Tompkins Trove Team">
 
 <title>Tompkins Trove – Our Story</title>
 
-<!-- Mobile scaling -->
+<!-- Makes the site scale properly on phones -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Fonts -->
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------------- GLOBAL ---------------- */
-/* Basic page setup */
+/* ---------------- GLOBAL STYLES ---------------- */
+/* Basic page setup and default colors */
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -27,17 +27,31 @@ body {
   overflow-x: hidden;
 }
 
-/* Link styling */
+/* Default link styling */
 a { 
   color: white; 
   text-decoration: none; 
   transition: color 0.2s ease-in-out;
 }
-a:hover { color: #a32036; }
-.dropdown-toggle:hover { color: #a32036; }
-footer a:hover { color: #a32036; }
+
+/* Hover effect for links */
+a:hover { 
+  color: #a32036;
+}
+
+/* Slight color change when hovering over dropdown labels */
+.dropdown-toggle:hover {
+  color: #a32036;
+  transition: color 0.2s;
+}
+
+/* Footer links get the same hover treatment */
+footer a:hover {
+  color: #a32036;
+}
 
 /* ---------------- NAV BAR ---------------- */
+/* Main navbar container */
 .homerow {
   background-color: #0f2d52;
   display: flex;
@@ -45,17 +59,20 @@ footer a:hover { color: #a32036; }
   padding: 10px 30px;
 }
 
+/* School logo in the navbar */
 .falcon {
   width: 70px;
   margin-right: 20px;
 }
 
+/* Branding section (logo + title) */
 .brand {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
+/* Site title styling */
 .brand-title {
   font-family: 'Playfair Display', serif;
   font-size: 32px;
@@ -64,6 +81,7 @@ footer a:hover { color: #a32036; }
   margin-right: 25px;
 }
 
+/* Navigation links on the right side */
 .nav {
   margin-left: auto;
   display: flex;
@@ -71,8 +89,14 @@ footer a:hover { color: #a32036; }
   font-size: 18px;
 }
 
-/* Dropdown menu */
-.dropdown { position: relative; cursor: pointer; }
+/* ---------------- DROPDOWN MENU ---------------- */
+/* Basic dropdown wrapper */
+.dropdown { 
+  position: relative; 
+  cursor: pointer; 
+}
+
+/* Hidden dropdown menu */
 .dropdown-content {
   position: absolute;
   background-color: #163b6b;
@@ -86,17 +110,22 @@ footer a:hover { color: #a32036; }
   border-bottom: 3px solid #a32036;
   pointer-events: none;
 }
+
+/* Show dropdown when active */
 .dropdown.active .dropdown-content {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
+
+/* Links inside dropdown */
 .dropdown-content a {
   display: block;
   padding: 8px 15px;
 }
 
 /* ---------------- PAGE CONTENT ---------------- */
+/* Section header for the page title */
 .founders {
   background-color: #a32036;
   text-align: center;
@@ -108,12 +137,14 @@ footer a:hover { color: #a32036; }
   font-size: 36px;
 }
 
+/* Main text container for the story */
 .foundersdescription {
   background-color: #a32036;
   text-align: center;
   padding: 20px;
 }
 
+/* Paragraph styling inside the story section */
 .foundersdescription p {
   max-width: 900px;
   margin: auto;
@@ -121,7 +152,7 @@ footer a:hover { color: #a32036; }
   line-height: 1.6;
 }
 
-/* Images */
+/* Images used to show V1 screenshots */
 .V1pics {
   max-width: 750px;
   width: 100%;
@@ -130,6 +161,7 @@ footer a:hover { color: #a32036; }
 }
 
 /* ---------------- FOOTER ---------------- */
+/* Footer layout and styling */
 footer {
   background-color: black;
   display: flex;
@@ -139,15 +171,17 @@ footer {
 }
 
 /* ---------------- MOBILE FIXES ---------------- */
+/* Mobile layout adjustments for smaller screens */
 @media (max-width: 700px) {
 
-  /* Navbar stacks vertically */
+  /* Navbar stacks vertically on phones */
   .homerow {
     flex-direction: column;
     align-items: flex-start;
     padding: 15px 20px;
   }
 
+  /* Navigation links wrap on small screens */
   .nav {
     margin-left: 0;
     margin-top: 10px;
@@ -164,6 +198,7 @@ footer {
     font-size: 16px;
   }
 
+  /* Footer stacks vertically on phones */
   footer {
     flex-direction: column;
     text-align: center;
@@ -256,7 +291,7 @@ footer {
 
 <!-- DROPDOWN SCRIPT -->
 <script>
-/* Basic dropdown toggle logic */
+// Handles opening/closing dropdown menus when tapped or clicked
 const dropdowns = document.querySelectorAll(".dropdown");
 
 dropdowns.forEach(d => {
@@ -267,6 +302,7 @@ dropdowns.forEach(d => {
   });
 });
 
+// Close all dropdowns if the user taps anywhere else on the page
 document.addEventListener("click", () => {
   dropdowns.forEach(d => {
     d.classList.remove("active");
