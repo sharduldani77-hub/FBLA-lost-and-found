@@ -2,55 +2,63 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Tompkins Lost and Found</title>
 
+<!-- Basic metadata for SEO -->
+<meta name="description" content="Register lost items through Tompkins Trove, the official lost and found system for Tompkins High School.">
+<meta name="keywords" content="Tompkins Trove, Lost and Found, Tompkins High School, OTHS, Katy ISD">
+<meta name="author" content="Tompkins Trove Team">
+
+<title>Tompkins Trove – Registration</title>
+
+<!-- Makes the layout scale properly on phones -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- GLOBAL ---------- */
-
-/* Reset everything to stay within its defined width */
+/* ---------------- GLOBAL STYLES ---------------- */
+/* Ensures padding and borders don't break layout */
 * {
   box-sizing: border-box;
 }
 
-/* Prevent the body from stretching horizontally */
+/* Basic page setup and gradient background */
 body {
   margin: 0;
   padding: 0;
-  width: 100%; /* Changed from 100vw to 100% to avoid scrollbar math issues */
+  width: 100%;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   background: linear-gradient(#12345f, #0b2442);
   color: white;
-  overflow-x: hidden; /* This is the main fix for the blue space */
+  overflow-x: hidden;
 }
-/* 1. Base Link Style: Makes all links white by default */
+
+/* Default link styling */
 a { 
   color: white; 
   text-decoration: none; 
-  transition: color 0.2s ease-in-out; /* Smooth transition effect */
+  transition: color 0.2s ease-in-out;
 }
 
-/* 2. Hover Effect: Turns links red when the mouse is over them */
+/* Hover effect for links */
 a:hover { 
-  color: #a32036; /* The signature Tompkins Red */
+  color: #a32036;
 }
 
-/* 3. Dropdown Toggle Hover: Specifically for "ABOUT US" and "FORMS" text */
+/* Slight color change when hovering over dropdown labels */
 .dropdown-toggle:hover {
   color: #a32036;
-  transition: color 0.2s;
 }
 
-/* 4. Footer Link Hover: Ensures the footer links also turn red */
+/* Footer links get the same hover treatment */
 footer a:hover {
   color: #a32036;
 }
 
-/* ---------- NAV BAR ---------- */
+/* ---------------- NAV BAR ---------------- */
+/* Main navbar container */
 .homerow {
   background-color: #0f2d52;
   display: flex;
@@ -58,26 +66,29 @@ footer a:hover {
   padding: 10px 30px;
 }
 
+/* School logo in the navbar */
 .falcon {
   width: 70px;
   margin-right: 20px;
 }
 
+/* Branding section (logo + title) */
 .brand {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
+/* Site title styling */
 .brand-title {
   font-family: 'Playfair Display', serif;
-  font-size: 32px; /* resized to fit navbar */
+  font-size: 32px;
   font-weight: 700;
   white-space: nowrap;
   margin-right: 25px;
 }
 
-
+/* Navigation links on the right side */
 .nav {
   margin-left: auto;
   display: flex;
@@ -85,23 +96,54 @@ footer a:hover {
   font-size: 18px;
 }
 
-.dropdown { position: relative; cursor: pointer; }
-    .dropdown-content { position: absolute; background-color: #163b6b; min-width: 180px; top: 30px; padding: 10px 0; z-index: 1000; opacity: 0; transform: translateY(-10px); transition: 0.25s; border-bottom: 3px solid #a32036; pointer-events: none; }
-    .dropdown.active .dropdown-content { opacity: 1; transform: translateY(0); pointer-events: auto; }
-    .dropdown-content a { display: block; padding: 8px 15px; color: white; text-decoration: none; }
+/* ---------------- DROPDOWN MENU ---------------- */
+/* Basic dropdown wrapper */
+.dropdown { 
+  position: relative; 
+  cursor: pointer; 
+}
 
+/* Hidden dropdown menu */
+.dropdown-content {
+  position: absolute;
+  background-color: #163b6b;
+  min-width: 180px;
+  top: 30px;
+  padding: 10px 0;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.25s;
+  border-bottom: 3px solid #a32036;
+  pointer-events: none;
+}
 
-/* ---------- FORM CONTAINER ---------- */
+/* Show dropdown when active */
+.dropdown.active .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Links inside dropdown */
+.dropdown-content a {
+  display: block;
+  padding: 8px 15px;
+}
+
+/* ---------------- FORM CONTAINER ---------------- */
+/* Centers the registration panel */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 60px 20px;
   border: 12px solid #a32036;
-  width: 100%; 
-  max-width: 100%; /* Ensures it never goes wider than the screen */
+  width: 100%;
+  max-width: 100%;
 }
 
+/* Main form panel */
 .panel {
   background-color: #0f2d52;
   border: 12px solid #a32036;
@@ -111,7 +153,8 @@ footer a:hover {
   padding: 40px;
 }
 
-/* ---------- HEADINGS ---------- */
+/* ---------------- HEADINGS ---------------- */
+/* Title styling */
 .panel-heading h1 {
   text-align: center;
   font-family: 'Playfair Display', serif;
@@ -119,51 +162,49 @@ footer a:hover {
   margin-bottom: 15px;
 }
 
+/* Subtitle text */
 .panel-heading p {
   text-align: center;
   font-size: 16px;
   margin-bottom: 30px;
 }
 
-/* ---------- FORM ---------- */
+/* ---------------- FORM ---------------- */
+/* Groups each label + input */
 .form-group {
   margin-bottom: 22px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* 👈 centers elements */
+  align-items: center;
 }
 
-
+/* Label styling */
 label {
   margin-bottom: 8px;
   font-size: 18px;
 }
 
+/* Input styling */
 .form-control,
 input[type="file"] {
   width: 100%;
-  max-width: 420px;     /* 👈 prevents stretching */
+  max-width: 420px;
   padding: 12px;
   background: transparent;
   border: 3px solid white;
   border-radius: 6px;
   color: white;
   font-size: 16px;
-  text-align: center;  /* 👈 centers text inside inputs */
+  text-align: center;
 }
 
-
+/* Placeholder text color */
 .form-control::placeholder {
   color: rgba(255,255,255,0.7);
 }
 
-/* ---------- RADIO BUTTONS ---------- */
-.radio-inline {
-  margin: 0 10px;
-  font-size: 16px;
-}
-
-/* ---------- BUTTON ---------- */
+/* ---------------- BUTTON ---------------- */
+/* Submit button styling */
 .btn-primary {
   display: block;
   width: 160px;
@@ -181,57 +222,90 @@ input[type="file"] {
   background-color: #c1171e;
 }
 
-/* ---------- FOOTER ---------- */
-.panel-footer {
-  text-align: center;
-  margin-top: 25px;
-  font-size: 14px;
-  opacity: 0.8;
+/* ---------------- FOOTER ---------------- */
+/* Footer layout */
+footer {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  font-size: 16px;
 }
 
-footer {
- background-color: black;
- display: flex;
- justify-content: space-around;
- padding: 20px;
- font-size: 16px;
- }
+/* ---------------- MOBILE FIXES ---------------- */
+/* Adjust layout for smaller screens */
+@media (max-width: 700px) {
 
+  /* Navbar stacks vertically */
+  .homerow {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  /* Navigation links wrap */
+  .nav {
+    margin-left: 0;
+    margin-top: 10px;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 16px;
+  }
+
+  /* Footer stacks vertically */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<div class="homerow">
+<!-- NAVIGATION BAR -->
+<nav class="homerow" role="navigation" aria-label="Main Navigation">
+
   <div class="brand">
-    <img class="falcon" src="https://resources.finalsite.net/images/f_auto,q_auto/v1744117969/katyisdorg/n6duhj5lz2w1wch9b1ae/oths.png" alt="Tompkins Logo">
+    <img class="falcon" src="https://resources.finalsite.net/images/f_auto,q_auto/v1744117969/katyisdorg/n6duhj5lz2w1wch9b1ae/oths.png" alt="Tompkins High School Logo">
     <span class="brand-title"><a href="index.html">Tompkins Trove</a></span>
   </div>
 
   <div class="nav">
-    <div class="dropdown">
-      <span class="dropdown-toggle">ABOUT US</span>
-      <div class="dropdown-content">
-        <a href="Story.html">Our Story</a>
-        <a href="Mission.html">Our Mission</a>
+
+    <!-- About dropdown -->
+    <div class="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="dropdown-toggle" role="button" aria-label="About Us Menu">ABOUT US</span>
+      <div class="dropdown-content" role="menu">
+        <a href="Story.html" role="menuitem">Our Story</a>
+        <a href="Mission.html" role="menuitem">Our Mission</a>
       </div>
     </div>
 
-    <div class="dropdown">
-      <span class="dropdown-toggle">FORMS</span>
-      <div class="dropdown-content">
-        <a href="registration.html">Registration</a>
-        <a href="Feedback.html">Feedback</a>
+    <!-- Forms dropdown -->
+    <div class="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="dropdown-toggle" role="button" aria-label="Forms Menu">FORMS</span>
+      <div class="dropdown-content" role="menu">
+        <a href="registration.html" role="menuitem">Registration</a>
+        <a href="Feedback.html" role="menuitem">Feedback</a>
       </div>
     </div>
-<div class="dropdown"><span class="dropdown-toggle">GALLERIES</span><div class="dropdown-content"><a href="gallery.php">Gallery</a><a href="archive.php">Archive</a>
+
+    <!-- Galleries dropdown -->
+    <div class="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="dropdown-toggle" role="button" aria-label="Galleries Menu">GALLERIES</span>
+      <div class="dropdown-content" role="menu">
+        <a href="gallery.php" role="menuitem">Gallery</a>
+        <a href="archive.php" role="menuitem">Archive</a>
       </div>
     </div>
 
   </div>
-</div>
+</nav>
 
-<div class="container">
+<!-- REGISTRATION FORM PANEL -->
+<div class="container" aria-label="Registration Form Section">
   <div class="panel">
 
     <div class="panel-heading">
@@ -240,39 +314,45 @@ footer {
     </div>
 
     <div class="panel-body">
-      <form action="connect.php" method="post" enctype="multipart/form-data">
+      <form action="connect.php" method="post" enctype="multipart/form-data" aria-label="Lost Item Registration Form">
 
+        <!-- First Name -->
         <div class="form-group">
           <label for="firstName">First Name</label>
-          <input type="text" class="form-control" id="firstName" name="firstName" required>
+          <input type="text" class="form-control" id="firstName" name="firstName" required aria-required="true">
         </div>
 
+        <!-- Last Name -->
         <div class="form-group">
           <label for="lastName">Last Name</label>
-          <input type="text" class="form-control" id="lastName" name="lastName" required>
+          <input type="text" class="form-control" id="lastName" name="lastName" required aria-required="true">
         </div>
 
+        <!-- Email -->
         <div class="form-group">
           <label for="email">KISD Email</label>
-          <input type="email" class="form-control" id="email" name="email" required>
+          <input type="email" class="form-control" id="email" name="email" required aria-required="true">
         </div>
 
+        <!-- Image Title -->
         <div class="form-group">
           <label for="imageTitle">Image Title</label>
           <input type="text" class="form-control" id="imageTitle" name="imageTitle">
         </div>
 
-
+        <!-- Upload Image -->
         <div class="form-group">
           <label for="image">Upload Image</label>
           <input type="file" id="image" name="image" accept="image/png, image/jpeg">
         </div>
 
+        <!-- Image Description -->
         <div class="form-group">
           <label for="imageDescription">Image Description</label>
           <input type="text" class="form-control" id="imageDescription" name="imageDescription">
         </div>
 
+        <!-- Submit Button -->
         <input type="submit" class="btn-primary" value="Submit">
 
       </form>
@@ -285,27 +365,36 @@ footer {
   </div>
 </div>
 
-<footer>
+<!-- FOOTER -->
+<footer role="contentinfo" aria-label="Footer Navigation">
   <a href="Story.html">Information</a>
   <a href="registration.html">Registration Page</a>
   <a href="gallery.php">Gallery</a>
   <a href="Feedback.html">Feedback</a>
 </footer>
 
-
+<!-- DROPDOWN SCRIPT -->
 <script>
+// Handles opening/closing dropdown menus when tapped or clicked
+const dropdowns = document.querySelectorAll(".dropdown");
 
-/* ---------- DROPDOWN CLICK BEHAVIOR ---------- */
- // Dropdown Logic
-  const dropdowns = document.querySelectorAll(".dropdown");
-  dropdowns.forEach(d => {
-    d.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
-      e.stopPropagation();
-      d.classList.toggle("active");
-    });
+dropdowns.forEach(d => {
+  d.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
+    e.stopPropagation();
+    d.classList.toggle("active");
+    d.setAttribute("aria-expanded", d.classList.contains("active"));
   });
-  document.addEventListener("click", () => dropdowns.forEach(d => d.classList.remove("active")));
+});
 
+// Close all dropdowns if the user taps anywhere else on the page
+document.addEventListener("click", () => {
+  dropdowns.forEach(d => {
+    d.classList.remove("active");
+    d.setAttribute("aria-expanded", "false");
+  });
+});
 </script>
+
 </body>
 </html>
+
