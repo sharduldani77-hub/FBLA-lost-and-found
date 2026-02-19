@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tompkins Trove</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #a32036;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* 1. Base Link Style: Makes all links white by default */
+a { 
+  color: white; 
+  text-decoration: none; 
+  transition: color 0.2s ease-in-out; /* Smooth transition effect */
+}
+
+/* 2. Hover Effect: Turns links red when the mouse is over them */
+a:hover { 
+  color: #a32036; /* The signature Tompkins Red */
+}
+
+/* 3. Dropdown Toggle Hover: Specifically for "ABOUT US" and "FORMS" text */
+.dropdown-toggle:hover {
+  color: #a32036;
+  transition: color 0.2s;
+}
+
+/* 4. Footer Link Hover: Ensures the footer links also turn red */
+footer a:hover {
+  color: #a32036;
+}
+/* ---------- NAV BAR ---------- */
+.homerow {
+  background-color: #0f2d52;
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.falcon {
+  width: 70px;
+  margin-right: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; /* resized to fit navbar */
+  font-weight: 700;
+  white-space: nowrap;
+  margin-right: 25px;
+}
+
+
+.nav {
+  margin-left: auto;
+  display: flex;
+  gap: 40px;
+  font-size: 18px;
+}
+
+/* Dropdown */
+.dropdown { position: relative; cursor: pointer; }
+    .dropdown-content { position: absolute; background-color: #163b6b; min-width: 180px; top: 30px; padding: 10px 0; z-index: 1000; opacity: 0; transform: translateY(-10px); transition: 0.25s; border-bottom: 3px solid #a32036; pointer-events: none; }
+    .dropdown.active .dropdown-content { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .dropdown-content a { display: block; padding: 8px 15px; color: white; text-decoration: none; }
+
+.founders {
+  background-color: #a32036;
+  height: 80px;
+  text-align: center;
+}
+
+.founders h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+}
+
+.foundersdescription{
+  background-color: #a32036;
+  height: 80px;
+  text-align: center;
+}
+
+.foundersdescription p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 18px;
+
+}
+
+footer {
+ background-color: black;
+ display: flex;
+ justify-content: space-around;
+ padding: 20px;
+ font-size: 16px;
+ }
+
+  </style>
+
+  <body>
+    
+  <div class="homerow">
+  <div class="brand">
+    <img class="falcon" src="https://resources.finalsite.net/images/f_auto,q_auto/v1744117969/katyisdorg/n6duhj5lz2w1wch9b1ae/oths.png" alt="Tompkins Logo">
+    <span class="brand-title"><a href="index.html">Tompkins Trove</a></span>
+  </div>
+
+  <div class="nav">
+    <div class="dropdown">
+      <span class="dropdown-toggle">ABOUT US</span>
+      <div class="dropdown-content">
+        <a href="Story.html">Our Story</a>
+        <a href="Mission.html">Our Mission</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <span class="dropdown-toggle">FORMS</span>
+      <div class="dropdown-content">
+        <a href="registration.html">Registration</a>
+        <a href="Feedback.html">Feedback</a>
+      </div>
+    </div>
+<div class="dropdown"><span class="dropdown-toggle">GALLERIES</span><div class="dropdown-content"><a href="gallery.php">Gallery</a><a href="archive.php">Archive</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div class="founders">
+  <h2>Our Mission</h2>
+</div>
+
+<div class="foundersdescription" width=100%>
+  <br>
+   <p> Our mission here at Tompkins Trove is simple. To provide you and the Tompkins community with easy access to register and claim lost items. Ever since V1, that has been our intention. Through V2, we give you a more focused registration process, a refined search engine, and a more secure claim process. These are just many more of the improvements that come with V2 of Tompkins Trove.</p>
+</div>
+<br>
+<br>
+<div>
+<img src="Items Found.png" alt="founders" width="100%" style="margin-top: 25px;">
+</div>
+<p style="text-align: left; font-size: 12px; margin-left: 10px; padding-bottom: 15px;"> Above are some of the various items that have been lost and found through Tompkins Trove.</p>
+<footer>
+  <a href="Story.html">Information</a>
+  <a href="registration.html">Registration Page</a>
+  <a href="gallery.php">Gallery</a>
+  <a href="Feedback.html">Feedback</a>
+</footer>
+
+<script>
+/* ---------- DROPDOWN CLICK BEHAVIOR ---------- */
+ // Dropdown Logic
+  const dropdowns = document.querySelectorAll(".dropdown");
+  dropdowns.forEach(d => {
+    d.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
+      e.stopPropagation();
+      d.classList.toggle("active");
+    });
+  });
+  document.addEventListener("click", () => dropdowns.forEach(d => d.classList.remove("active")));
+</script>
+</body>
+</html>
