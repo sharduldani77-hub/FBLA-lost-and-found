@@ -125,6 +125,39 @@ a:hover { color: #a32036; }
     object-fit: cover;
   }
 }
+  /* --- MOBILE FIXES FOR HOMEPAGE LAYOUT --- */
+@media (max-width: 700px) {
+
+  /* Let the red welcome box grow with the text */
+  .welcome {
+    height: auto !important;
+    min-height: 200px; /* gives breathing room */
+    padding: 30px 20px;
+    position: relative;
+    z-index: 3; /* keeps it above the slideshow */
+  }
+
+
+  .slideshow {
+    height: 220px !important; /* adjust if needed */
+    position: relative;
+    z-index: 1;
+  }
+
+
+  .slide img {
+    height: 220px !important;
+    width: 100%;
+    object-fit: cover;
+  }
+
+
+  .main {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
 
 
 
