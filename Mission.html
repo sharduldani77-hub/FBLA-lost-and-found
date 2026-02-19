@@ -2,13 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Tompkins Trove</title>
+
+<!-- Basic metadata for SEO -->
+<meta name="description" content="Learn about the mission behind Tompkins Trove, the official lost and found system for Tompkins High School.">
+<meta name="keywords" content="Tompkins Trove, Tompkins High School, Lost and Found, OTHS, Katy ISD">
+<meta name="author" content="Tompkins Trove Team">
+
+<title>Tompkins Trove – Our Mission</title>
+
+<!-- Makes the layout scale properly on phones -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- GLOBAL ---------- */
+/* ---------------- GLOBAL STYLES ---------------- */
+/* Basic page setup and default colors */
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -17,29 +27,30 @@ body {
   overflow-x: hidden;
 }
 
-/* 1. Base Link Style: Makes all links white by default */
+/* Default link styling */
 a { 
   color: white; 
   text-decoration: none; 
-  transition: color 0.2s ease-in-out; /* Smooth transition effect */
+  transition: color 0.2s ease-in-out;
 }
 
-/* 2. Hover Effect: Turns links red when the mouse is over them */
+/* Hover effect for links */
 a:hover { 
-  color: #a32036; /* The signature Tompkins Red */
+  color: #a32036;
 }
 
-/* 3. Dropdown Toggle Hover: Specifically for "ABOUT US" and "FORMS" text */
+/* Slight color change when hovering over dropdown labels */
 .dropdown-toggle:hover {
   color: #a32036;
-  transition: color 0.2s;
 }
 
-/* 4. Footer Link Hover: Ensures the footer links also turn red */
+/* Footer links get the same hover treatment */
 footer a:hover {
   color: #a32036;
 }
-/* ---------- NAV BAR ---------- */
+
+/* ---------------- NAV BAR ---------------- */
+/* Main navbar container */
 .homerow {
   background-color: #0f2d52;
   display: flex;
@@ -47,26 +58,29 @@ footer a:hover {
   padding: 10px 30px;
 }
 
+/* School logo in the navbar */
 .falcon {
   width: 70px;
   margin-right: 20px;
 }
 
+/* Branding section (logo + title) */
 .brand {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
+/* Site title styling */
 .brand-title {
   font-family: 'Playfair Display', serif;
-  font-size: 32px; /* resized to fit navbar */
+  font-size: 32px;
   font-weight: 700;
   white-space: nowrap;
   margin-right: 25px;
 }
 
-
+/* Navigation links on the right side */
 .nav {
   margin-left: auto;
   display: flex;
@@ -74,16 +88,47 @@ footer a:hover {
   font-size: 18px;
 }
 
-/* Dropdown */
-.dropdown { position: relative; cursor: pointer; }
-    .dropdown-content { position: absolute; background-color: #163b6b; min-width: 180px; top: 30px; padding: 10px 0; z-index: 1000; opacity: 0; transform: translateY(-10px); transition: 0.25s; border-bottom: 3px solid #a32036; pointer-events: none; }
-    .dropdown.active .dropdown-content { opacity: 1; transform: translateY(0); pointer-events: auto; }
-    .dropdown-content a { display: block; padding: 8px 15px; color: white; text-decoration: none; }
+/* ---------------- DROPDOWN MENU ---------------- */
+/* Basic dropdown wrapper */
+.dropdown { 
+  position: relative; 
+  cursor: pointer; 
+}
 
+/* Hidden dropdown menu */
+.dropdown-content {
+  position: absolute;
+  background-color: #163b6b;
+  min-width: 180px;
+  top: 30px;
+  padding: 10px 0;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.25s;
+  border-bottom: 3px solid #a32036;
+  pointer-events: none;
+}
+
+/* Show dropdown when active */
+.dropdown.active .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Links inside dropdown */
+.dropdown-content a {
+  display: block;
+  padding: 8px 15px;
+}
+
+/* ---------------- PAGE CONTENT ---------------- */
+/* Section header for the page title */
 .founders {
   background-color: #a32036;
-  height: 80px;
   text-align: center;
+  padding: 30px 10px;
 }
 
 .founders h2 {
@@ -91,93 +136,162 @@ footer a:hover {
   font-size: 36px;
 }
 
-.foundersdescription{
+/* Main text container for the mission statement */
+.foundersdescription {
   background-color: #a32036;
-  height: 80px;
   text-align: center;
+  padding: 20px;
 }
 
+/* Paragraph styling inside the mission section */
 .foundersdescription p {
   max-width: 900px;
   margin: auto;
   font-size: 18px;
-
+  line-height: 1.6;
 }
 
+/* ---------------- FOOTER ---------------- */
+/* Footer layout and styling */
 footer {
- background-color: black;
- display: flex;
- justify-content: space-around;
- padding: 20px;
- font-size: 16px;
- }
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  font-size: 16px;
+}
 
-  </style>
+/* ---------------- MOBILE FIXES ---------------- */
+/* Mobile layout adjustments for smaller screens */
+@media (max-width: 700px) {
 
-  <body>
-    
-  <div class="homerow">
+  /* Navbar stacks vertically on phones */
+  .homerow {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  /* Navigation links wrap on small screens */
+  .nav {
+    margin-left: 0;
+    margin-top: 10px;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 16px;
+  }
+
+  .founders h2 {
+    font-size: 30px;
+  }
+
+  .foundersdescription p {
+    font-size: 16px;
+  }
+
+  /* Footer stacks vertically on phones */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav class="homerow" role="navigation" aria-label="Main Navigation">
+
   <div class="brand">
-    <img class="falcon" src="https://resources.finalsite.net/images/f_auto,q_auto/v1744117969/katyisdorg/n6duhj5lz2w1wch9b1ae/oths.png" alt="Tompkins Logo">
+    <img class="falcon" src="https://resources.finalsite.net/images/f_auto,q_auto/v1744117969/katyisdorg/n6duhj5lz2w1wch9b1ae/oths.png" alt="Tompkins High School Logo">
     <span class="brand-title"><a href="index.html">Tompkins Trove</a></span>
   </div>
 
   <div class="nav">
-    <div class="dropdown">
-      <span class="dropdown-toggle">ABOUT US</span>
-      <div class="dropdown-content">
-        <a href="Story.html">Our Story</a>
-        <a href="Mission.html">Our Mission</a>
+
+    <!-- About dropdown -->
+    <div class="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="dropdown-toggle" role="button" aria-label="About Us Menu">ABOUT US</span>
+      <div class="dropdown-content" role="menu">
+        <a href="Story.html" role="menuitem">Our Story</a>
+        <a href="Mission.html" role="menuitem">Our Mission</a>
       </div>
     </div>
 
-    <div class="dropdown">
-      <span class="dropdown-toggle">FORMS</span>
-      <div class="dropdown-content">
-        <a href="registration.html">Registration</a>
-        <a href="Feedback.html">Feedback</a>
+    <!-- Forms dropdown -->
+    <div class="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="dropdown-toggle" role="button" aria-label="Forms Menu">FORMS</span>
+      <div class="dropdown-content" role="menu">
+        <a href="registration.html" role="menuitem">Registration</a>
+        <a href="Feedback.html" role="menuitem">Feedback</a>
       </div>
     </div>
-<div class="dropdown"><span class="dropdown-toggle">GALLERIES</span><div class="dropdown-content"><a href="gallery.php">Gallery</a><a href="archive.php">Archive</a>
+
+    <!-- Galleries dropdown -->
+    <div class="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="dropdown-toggle" role="button" aria-label="Galleries Menu">GALLERIES</span>
+      <div class="dropdown-content" role="menu">
+        <a href="gallery.php" role="menuitem">Gallery</a>
+        <a href="archive.php" role="menuitem">Archive</a>
       </div>
     </div>
 
   </div>
-</div>
-</div>
+</nav>
 
-<div class="founders">
+<!-- PAGE TITLE -->
+<section class="founders" aria-label="Mission Title Section">
   <h2>Our Mission</h2>
+</section>
+
+<!-- MAIN MISSION CONTENT -->
+<section class="foundersdescription" aria-label="Mission Statement">
+  <p>
+    Our mission here at Tompkins Trove is simple: to provide the Tompkins community with easy access to register and claim lost items. Ever since V1, that has been our intention. Through V2, we give you a more focused registration process, a refined search engine, and a more secure claim process. These improvements — and many more — help make Tompkins Trove a reliable and accessible lost and found system.
+  </p>
+</section>
+
+<!-- IMAGE SECTION -->
+<div>
+  <img src="Items Found.png" alt="Various items found through Tompkins Trove" width="100%" style="margin-top: 25px;">
 </div>
 
-<div class="foundersdescription" width=100%>
-  <br>
-   <p> Our mission here at Tompkins Trove is simple. To provide you and the Tompkins community with easy access to register and claim lost items. Ever since V1, that has been our intention. Through V2, we give you a more focused registration process, a refined search engine, and a more secure claim process. These are just many more of the improvements that come with V2 of Tompkins Trove.</p>
-</div>
-<br>
-<br>
-<div>
-<img src="Items Found.png" alt="founders" width="100%" style="margin-top: 25px;">
-</div>
-<p style="text-align: left; font-size: 12px; margin-left: 10px; padding-bottom: 15px;"> Above are some of the various items that have been lost and found through Tompkins Trove.</p>
-<footer>
+<p style="text-align: left; font-size: 12px; margin-left: 10px; padding-bottom: 15px;">
+  Above are some of the various items that have been lost and found through Tompkins Trove.
+</p>
+
+<!-- FOOTER -->
+<footer role="contentinfo" aria-label="Footer Navigation">
   <a href="Story.html">Information</a>
   <a href="registration.html">Registration Page</a>
   <a href="gallery.php">Gallery</a>
   <a href="Feedback.html">Feedback</a>
 </footer>
 
+<!-- DROPDOWN SCRIPT -->
 <script>
-/* ---------- DROPDOWN CLICK BEHAVIOR ---------- */
- // Dropdown Logic
-  const dropdowns = document.querySelectorAll(".dropdown");
-  dropdowns.forEach(d => {
-    d.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
-      e.stopPropagation();
-      d.classList.toggle("active");
-    });
+// Handles opening/closing dropdown menus when tapped or clicked
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(d => {
+  d.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
+    e.stopPropagation();
+    d.classList.toggle("active");
+    d.setAttribute("aria-expanded", d.classList.contains("active"));
   });
-  document.addEventListener("click", () => dropdowns.forEach(d => d.classList.remove("active")));
+});
+
+// Close all dropdowns if the user taps anywhere else on the page
+document.addEventListener("click", () => {
+  dropdowns.forEach(d => {
+    d.classList.remove("active");
+    d.setAttribute("aria-expanded", "false");
+  });
+});
 </script>
+
 </body>
 </html>
+
