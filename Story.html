@@ -2,13 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Tompkins Trove</title>
+
+<!-- Simple, clean metadata -->
+<meta name="description" content="Learn the story behind Tompkins Trove, the official lost and found system for Tompkins High School.">
+<meta name="keywords" content="Tompkins Trove, Tompkins High School, Lost and Found, OTHS, Katy ISD">
+<meta name="author" content="Tompkins Trove Team">
+
+<title>Tompkins Trove – Our Story</title>
+
+<!-- Mobile scaling -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- GLOBAL ---------- */
+/* ---------------- GLOBAL ---------------- */
+/* Basic page setup */
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -17,29 +27,17 @@ body {
   overflow-x: hidden;
 }
 
-/* 1. Base Link Style: Makes all links white by default */
+/* Link styling */
 a { 
   color: white; 
   text-decoration: none; 
-  transition: color 0.2s ease-in-out; /* Smooth transition effect */
+  transition: color 0.2s ease-in-out;
 }
+a:hover { color: #a32036; }
+.dropdown-toggle:hover { color: #a32036; }
+footer a:hover { color: #a32036; }
 
-/* 2. Hover Effect: Turns links red when the mouse is over them */
-a:hover { 
-  color: #a32036; /* The signature Tompkins Red */
-}
-
-/* 3. Dropdown Toggle Hover: Specifically for "ABOUT US" and "FORMS" text */
-.dropdown-toggle:hover {
-  color: #a32036;
-  transition: color 0.2s;
-}
-
-/* 4. Footer Link Hover: Ensures the footer links also turn red */
-footer a:hover {
-  color: #a32036;
-}
-/* ---------- NAV BAR ---------- */
+/* ---------------- NAV BAR ---------------- */
 .homerow {
   background-color: #0f2d52;
   display: flex;
@@ -60,12 +58,11 @@ footer a:hover {
 
 .brand-title {
   font-family: 'Playfair Display', serif;
-  font-size: 32px; /* resized to fit navbar */
+  font-size: 32px;
   font-weight: 700;
   white-space: nowrap;
   margin-right: 25px;
 }
-
 
 .nav {
   margin-left: auto;
@@ -74,16 +71,36 @@ footer a:hover {
   font-size: 18px;
 }
 
-/* Dropdown */
+/* Dropdown menu */
 .dropdown { position: relative; cursor: pointer; }
-    .dropdown-content { position: absolute; background-color: #163b6b; min-width: 180px; top: 30px; padding: 10px 0; z-index: 1000; opacity: 0; transform: translateY(-10px); transition: 0.25s; border-bottom: 3px solid #a32036; pointer-events: none; }
-    .dropdown.active .dropdown-content { opacity: 1; transform: translateY(0); pointer-events: auto; }
-    .dropdown-content a { display: block; padding: 8px 15px; color: white; text-decoration: none; }
+.dropdown-content {
+  position: absolute;
+  background-color: #163b6b;
+  min-width: 180px;
+  top: 30px;
+  padding: 10px 0;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.25s;
+  border-bottom: 3px solid #a32036;
+  pointer-events: none;
+}
+.dropdown.active .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.dropdown-content a {
+  display: block;
+  padding: 8px 15px;
+}
 
+/* ---------------- PAGE CONTENT ---------------- */
 .founders {
   background-color: #a32036;
-  height: 80px;
   text-align: center;
+  padding: 30px 10px;
 }
 
 .founders h2 {
@@ -91,132 +108,174 @@ footer a:hover {
   font-size: 36px;
 }
 
-.foundersdescription{
+.foundersdescription {
   background-color: #a32036;
   text-align: center;
+  padding: 20px;
 }
 
 .foundersdescription p {
   max-width: 900px;
   margin: auto;
   font-size: 18px;
-
+  line-height: 1.6;
 }
 
-.V1pics{
-   max-width: 750px;
-   display: block;
-   margin: 20px auto;
+/* Images */
+.V1pics {
+  max-width: 750px;
+  width: 100%;
+  display: block;
+  margin: 20px auto;
 }
 
+/* ---------------- FOOTER ---------------- */
 footer {
- background-color: black;
- display: flex;
- justify-content: space-around;
- padding: 20px;
- font-size: 16px;
- }
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  font-size: 16px;
+}
 
+/* ---------------- MOBILE FIXES ---------------- */
+@media (max-width: 700px) {
 
-  </style>
+  /* Navbar stacks vertically */
+  .homerow {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
 
-  <body>
-    
-  <div class="homerow">
+  .nav {
+    margin-left: 0;
+    margin-top: 10px;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 16px;
+  }
+
+  .founders h2 {
+    font-size: 30px;
+  }
+
+  .foundersdescription p {
+    font-size: 16px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav class="homerow" role="navigation" aria-label="Main Navigation">
+
   <div class="brand">
-    <img class="falcon" src="https://resources.finalsite.net/images/f_auto,q_auto/v1744117969/katyisdorg/n6duhj5lz2w1wch9b1ae/oths.png" alt="Tompkins Logo">
+    <img class="falcon" src="https://resources.finalsite.net/images/f_auto,q_auto/v1744117969/katyisdorg/n6duhj5lz2w1wch9b1ae/oths.png" alt="Tompkins High School Logo">
     <span class="brand-title"><a href="index.html">Tompkins Trove</a></span>
   </div>
 
   <div class="nav">
-    <div class="dropdown">
-      <span class="dropdown-toggle">ABOUT US</span>
-      <div class="dropdown-content">
-        <a href="Story.html">Our Story</a>
-        <a href="Mission.html">Our Mission</a>
+
+    <!-- About dropdown -->
+    <div class="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="dropdown-toggle" role="button" aria-label="About Us Menu">ABOUT US</span>
+      <div class="dropdown-content" role="menu">
+        <a href="Story.html" role="menuitem">Our Story</a>
+        <a href="Mission.html" role="menuitem">Our Mission</a>
       </div>
     </div>
 
-    <div class="dropdown">
-      <span class="dropdown-toggle">FORMS</span>
-      <div class="dropdown-content">
-        <a href="registration.html">Registration</a>
-        <a href="Feedback.html">Feedback</a>
+    <!-- Forms dropdown -->
+    <div class="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="dropdown-toggle" role="button" aria-label="Forms Menu">FORMS</span>
+      <div class="dropdown-content" role="menu">
+        <a href="registration.html" role="menuitem">Registration</a>
+        <a href="Feedback.html" role="menuitem">Feedback</a>
       </div>
     </div>
-<div class="dropdown"><span class="dropdown-toggle">GALLERIES</span><div class="dropdown-content"><a href="gallery.php">Gallery</a><a href="archive.php">Archive</a>
+
+    <!-- Galleries dropdown -->
+    <div class="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="dropdown-toggle" role="button" aria-label="Galleries Menu">GALLERIES</span>
+      <div class="dropdown-content" role="menu">
+        <a href="gallery.php" role="menuitem">Gallery</a>
+        <a href="archive.php" role="menuitem">Archive</a>
       </div>
     </div>
 
   </div>
-</div>
-</div>
+</nav>
 
-<div class="founders">
+<!-- PAGE TITLE -->
+<section class="founders" aria-label="Our Story Title Section">
   <h2>Our Story</h2>
-</div>
+</section>
 
+<!-- Founders Image -->
 <div>
-<img src="Founders.jpg" alt="founders" width="100%">
+  <img src="Founders.jpg" alt="Tompkins Trove Founders" width="100%">
 </div>
 
-<div class="foundersdescription" width=100%>
-  <br>
-  <br>
-   <p> Months ago, at the beginning of October, we joined to form the FBLA team responsible for the very website you are being with presented with. After signing up for this event, we got to work brainstorming ideas, designing, and programming. We eventually came up with a simple system of three pages: a homepage, a registration page, and a gallery for the items. Using a combination of HTML, CSS, Javascript, PHP, we were able to create a rather basic, functional lost and found site connecting said pages. This site eventually came to be known as: V1.</p>
-   <br>
-   <br>
-   <br>
-   <img class="V1pics" src="V1 Homepage.png" alt="V1 Homepage" width="100%">
-   <br>
-   <br>
-   <p> The initial homepage came with a small yet warm welcome with a description, the most primitive version of the navigation bar, and the most patriotic image of the school we could find.</p>
-   <br>
-   <br>
-   <img class="V1pics"  src="V1 Registration.png" alt="V1 Registration" width="100%">
-   <br>
-   <br>
-<p>The registration page had many fields, some admittedly more unnecessary than others, and some solid-looking stylization.</p>
-   <br>
-   <br>
-   <img class="V1pics"  src="V1 Gallery.png" alt="V1 Gallery" width="100%">
-   <br>
-   <br>
-<p>The gallery prototype shown above is similar to the homepage, with its warm welcome and description. How it worked, though, was easily the most unique part of the website. After an item was registered, anybody could 'claim' it. It'd give you a message, telling you to go claim it at the front office. Despite you 'claiming' it, the entry wouldn't go away from the website until the item was given away. This meant all 'claiming' an item did was telling you to go to the front office. While it all worked, it definitely meant the system was weak. That's why we decided to change it.</p>
-   <br>
-   <br>
-   <p>To recap: at the time, the site was functional, but rather basic. After getting various feedback from our judges at the Area V competition, and thankfully getting the opportunity to present at our state's leadership conference, we got to work improving the website.</p>
-   <br>
-   <br>
- <p>At the forefront of this redesign was accessibility. We polished the interface, adding the navigation bar at the top, allowing you to access any part of the website from wherever you are. We also polished up the design by implementing design principles not present in V1. The registration process has also been reworked to eliminate any unnecessary fields,  the gallery search engine has been refined, and the claim process has been completely redone. There also comes new additions, such as the implementation of the feedback page, an archive of every item ever registered, and the instructional video on how to use the site. All of this and more comes in the new and improved:</p>
-  <br>
-<h2 style="font-family: 'Playfair Display', serif; font-size: 75px; font-weight: 700;"> Tompkins Trove: V2</h2>
-    <br>
-  </div> 
+<!-- MAIN STORY CONTENT -->
+<section class="foundersdescription" aria-label="Story Content">
 
-<footer>
+  <p>Months ago, at the beginning of October, we joined to form the FBLA team responsible for the very website you are being presented with...</p>
+
+  <img class="V1pics" src="V1 Homepage.png" alt="Screenshot of V1 Homepage">
+
+  <p>The initial homepage came with a small yet warm welcome...</p>
+
+  <img class="V1pics" src="V1 Registration.png" alt="Screenshot of V1 Registration Page">
+
+  <p>The registration page had many fields...</p>
+
+  <img class="V1pics" src="V1 Gallery.png" alt="Screenshot of V1 Gallery">
+
+  <p>The gallery prototype shown above is similar to the homepage...</p>
+
+  <h2 style="font-family: 'Playfair Display', serif; font-size: 75px; font-weight: 700;">Tompkins Trove: V2</h2>
+
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo" aria-label="Footer Navigation">
   <a href="Story.html">Information</a>
   <a href="registration.html">Registration Page</a>
   <a href="gallery.php">Gallery</a>
   <a href="Feedback.html">Feedback</a>
 </footer>
 
+<!-- DROPDOWN SCRIPT -->
+<script>
+/* Basic dropdown toggle logic */
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(d => {
+  d.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
+    e.stopPropagation();
+    d.classList.toggle("active");
+    d.setAttribute("aria-expanded", d.classList.contains("active"));
+  });
+});
+
+document.addEventListener("click", () => {
+  dropdowns.forEach(d => {
+    d.classList.remove("active");
+    d.setAttribute("aria-expanded", "false");
+  });
+});
+</script>
 
 </body>
-  
-  <script>
- /* ---------- DROPDOWN CLICK BEHAVIOR ---------- */
- // Dropdown Logic
-  const dropdowns = document.querySelectorAll(".dropdown");
-  dropdowns.forEach(d => {
-    d.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
-      e.stopPropagation();
-      d.classList.toggle("active");
-    });
-  });
-  document.addEventListener("click", () => dropdowns.forEach(d => d.classList.remove("active")));
-  </script> 
-
-  </html>
+</html>
 
 
