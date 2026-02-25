@@ -4,29 +4,25 @@
 <meta charset="utf-8">
 <title>Tompkins Trove</title>
 
-<!-- Ensures proper scaling on all phones, including landscape -->
+<!-- Makes the site scale correctly on phones -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<!-- Basic SEO -->
+<!-- SEO metadata -->
 <meta name="description" content="Tompkins Trove is the official lost and found system for Tompkins High School. Students can register lost items, browse the gallery, and claim belongings easily.">
-
 <meta name="keywords" content="Tompkins High School, Lost and Found, OTHS, Katy ISD, school lost items, Tompkins Trove">
-
 <meta name="author" content="Tompkins Trove Team">
-
-<!-- Mobile + Browser Settings -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0f2d52">
 
 <style>
-/* ---------------- GLOBAL STYLES ---------------- */
-/* Basic page setup */
+/* ============================================================
+   GLOBAL STYLES
+   ============================================================ */
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   background-color: #0f2d52;
   color: white;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevents sideways scrolling on mobile */
 }
 
 a { 
@@ -37,20 +33,13 @@ a {
 
 a:hover { color: #a32036; }
 
-/* ---------------- MOBILE RESPONSIVENESS ---------------- */
-/* These rules help the layout stay readable on small screens */
+/* Importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap');
+
+/* ============================================================
+   MOBILE RESPONSIVENESS
+   ============================================================ */
 @media (max-width: 700px) {
-
-  .homerow {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-
-  .brand-title {
-    font-size: 24px;
-  }
-
   .nav {
     margin-left: 0;
     margin-top: 10px;
@@ -60,90 +49,19 @@ a:hover { color: #a32036; }
   }
 
   .welcome {
-    height: auto;
-    padding: 30px 20px;
-  }
-
-  .welcome h2 {
-    font-size: 28px;
-  }
-
-  .welcome p {
-    font-size: 16px;
-  }
-
-  .main {
-    flex-direction: column;
-  }
-
-  .slideshow,
-  .reviews {
-    width: 100%;
-  }
-
-  .reviews {
-    padding: 20px;
-  }
-
-  .review-box {
-    font-size: 20px;
-  }
-
-  .how-to-section {
-    flex-direction: column;
-    padding: 30px 20px;
-  }
-
-  .how-to-left,
-  .how-to-right {
-    width: 100%;
-  }
-
-  footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-}
-  @media (max-width: 700px) {
-  .slideshow {
-    height: 250px; /* or 300px */
-  }
-
-  .slide img {
-    height: 250px;
-    object-fit: cover;
-  }
-}
-  @media (max-width: 700px) {
-  .slideshow {
-    height: 200px; /* smaller so it doesn't collide */
-  }
-
-  .slide img {
-    height: 200px;
-    object-fit: cover;
-  }
-}
-  /* --- MOBILE FIXES FOR HOMEPAGE LAYOUT --- */
-@media (max-width: 700px) {
-
-  /* Let the red welcome box grow with the text */
-  .welcome {
     height: auto !important;
-    min-height: 200px; /* gives breathing room */
     padding: 30px 20px;
-    position: relative;
-    z-index: 3; /* keeps it above the slideshow */
   }
 
+  .welcome h2 { font-size: 28px; }
+  .welcome p { font-size: 16px; }
+
+  .main { flex-direction: column; }
 
   .slideshow {
-    height: 220px !important; /* adjust if needed */
-    position: relative;
-    z-index: 1;
+    width: 100%;
+    height: 220px !important;
   }
-
 
   .slide img {
     height: 220px !important;
@@ -151,17 +69,18 @@ a:hover { color: #a32036; }
     object-fit: cover;
   }
 
+  .reviews { width: 100%; padding: 20px; }
+  .review-box { font-size: 20px; }
 
-  .main {
-    margin-top: 0;
-    padding-top: 0;
-  }
+  .how-to-section { flex-direction: column; padding: 30px 20px; }
+  .how-to-left, .how-to-right { width: 100%; }
+
+  footer { flex-direction: column; text-align: center; gap: 10px; }
 }
 
-
-
-
-/* ---------------- NAV BAR ---------------- */
+/* ============================================================
+   NAVIGATION BAR
+   ============================================================ */
 .homerow {
   background-color: #0f2d52;
   display: flex;
@@ -169,16 +88,8 @@ a:hover { color: #a32036; }
   padding: 10px 30px;
 }
 
-.falcon {
-  width: 70px;
-  margin-right: 20px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+.falcon { width: 70px; margin-right: 20px; }
+.brand { display: flex; align-items: center; gap: 15px; }
 
 .brand-title {
   font-family: 'Playfair Display', serif;
@@ -221,78 +132,32 @@ a:hover { color: #a32036; }
   color: white;
 }
 
-/* ---------------- WELCOME SECTION ---------------- */
+/* ============================================================
+   WELCOME SECTION
+   ============================================================ */
 .welcome {
   background-color: #a32036;
   height: 225px;
   padding: 30px 60px;
   text-align: center;
 }
-.welcome h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-}
-.welcome p {
-  max-width: 900px;
-  margin: auto;
-  font-size: 18px;
-}
+.welcome h2 { font-family: 'Playfair Display', serif; font-size: 36px; }
+.welcome p { max-width: 900px; margin: auto; font-size: 18px; }
 
-/* ---------------- MAIN CONTENT ---------------- */
-.main {
-  display: flex;
-  min-height: 400px;
-}
+/* ============================================================
+   MAIN CONTENT AREA
+   ============================================================ */
+.main { display: flex; min-height: 400px; }
 
-.slideshow {
-  width: 50%;
-  position: relative;
-  overflow: hidden;
-}
-
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
+.slideshow { width: 50%; position: relative; overflow: hidden; }
+.slide { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; }
 .slide.active { opacity: 1; }
+.slide img { width: 100%; height: 100%; object-fit: cover; }
 
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.reviews {
-  width: 50%;
-  padding: 40px;
-  text-align: center;
-  background-color: #0f2d52;
-}
-
-.review-box {
-  font-size: 28px;
-  min-height: 120px;
-  max-width: 450px;
-  margin: 0 auto;
-}
-
-.reviewtitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 27px;
-  display: flex;
-  justify-content: center;
-}
-
-.review-controls {
-  display: flex;
-  justify-content: space-between;
-  font-size: 60px;
-  cursor: pointer;
-}
+.reviews { width: 50%; padding: 40px; text-align: center; }
+.review-box { font-size: 28px; min-height: 120px; max-width: 450px; margin: 0 auto; }
+.reviewtitle { font-family: 'Playfair Display', serif; font-size: 27px; display: flex; justify-content: center; }
+.review-controls { display: flex; justify-content: space-between; font-size: 60px; cursor: pointer; }
 
 .feedback-btn {
   margin-top: 30px;
@@ -304,38 +169,18 @@ a:hover { color: #a32036; }
   cursor: pointer;
 }
 
-/* ---------------- HOW TO SECTION ---------------- */
-.how-to-section {
-  display: flex;
-  padding: 60px;
-  gap: 40px;
-  background-color: #a32036;
-}
+/* ============================================================
+   HOW-TO SECTION
+   ============================================================ */
+.how-to-section { display: flex; padding: 60px; gap: 40px; background-color: #a32036; }
+.how-to-left, .how-to-right { width: 50%; }
+.how-to-left h2 { font-family: 'Playfair Display', serif; font-size: 48px; text-align: center; margin-top: 0; }
+.video-wrapper { position: relative; padding-top: 56.25%; }
+.video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
 
-.how-to-left, .how-to-right {
-  width: 50%;
-}
-
-.how-to-left h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  text-align: center;
-  margin-top: 0;
-}
-
-.video-wrapper {
-  position: relative;
-  padding-top: 56.25%;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* ---------------- FOOTER ---------------- */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 footer {
   background-color: black;
   display: flex;
@@ -348,7 +193,9 @@ footer {
 
 <body>
 
-<!-- NAVIGATION BAR -->
+<!-- ============================================================
+     NAVIGATION BAR
+     ============================================================ -->
 <nav class="homerow" role="navigation" aria-label="Main Navigation">
   <div class="brand">
     <img class="falcon" src="https://resources.finalsite.net/images/f_auto,q_auto/v1744117969/katyisdorg/n6duhj5lz2w1wch9b1ae/oths.png" alt="Tompkins High School Logo">
@@ -356,8 +203,7 @@ footer {
   </div>
 
   <div class="nav">
-
-    <!-- About dropdown -->
+    <!-- Each dropdown now has ARIA attributes for accessibility -->
     <div class="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="dropdown-toggle" role="button" aria-label="About Us Menu">ABOUT US</span>
       <div class="dropdown-content" role="menu">
@@ -366,7 +212,6 @@ footer {
       </div>
     </div>
 
-    <!-- Forms dropdown -->
     <div class="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="dropdown-toggle" role="button" aria-label="Forms Menu">FORMS</span>
       <div class="dropdown-content" role="menu">
@@ -375,7 +220,6 @@ footer {
       </div>
     </div>
 
-    <!-- Galleries dropdown -->
     <div class="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="dropdown-toggle" role="button" aria-label="Galleries Menu">GALLERIES</span>
       <div class="dropdown-content" role="menu">
@@ -383,19 +227,21 @@ footer {
         <a href="archive.php" role="menuitem">Archive</a>
       </div>
     </div>
-
   </div>
 </nav>
 
-<!-- WELCOME SECTION -->
+<!-- ============================================================
+     WELCOME SECTION
+     ============================================================ -->
 <section class="welcome" aria-label="Welcome Section">
   <h2>Welcome to Tompkins Trove</h2>
   <p>Here, you can register, claim, and look at items lost around the school. To register an item, click on the registration form and fill out all fields. To look at and claim items, go to the Gallery.</p>
 </section>
 
-<!-- MAIN CONTENT -->
+<!-- ============================================================
+     MAIN CONTENT AREA
+     ============================================================ -->
 <section class="main" aria-label="Main Content Area">
-
   <!-- Slideshow -->
   <div class="slideshow" aria-label="School Image Slideshow">
     <div class="slide active"><img src="TompkinsSign.png" alt="Tompkins High School Sign"></div>
@@ -404,9 +250,9 @@ footer {
 
   <!-- Reviews -->
   <div class="reviews" aria-label="User Reviews">
-    <div class="review-box" id="reviewText">“This site makes finding lost items so much easier!”</div>
-    <div style="text-align: center; margin-bottom: 20px;">- Mr. Robertson</div>
-
+    <div class="review-box" id="reviewText">“Finally, a central place to check for my lost stuff!”</div>
+    <div id="reviewAuthor" style="text-align: center; margin-bottom: 20px;">- Nitish</div>
+    
     <div class="review-controls">
       <span onclick="prevReview()" aria-label="Previous Review" role="button">&lt;</span>
       <h2 class="reviewtitle">Reviews</h2>
@@ -419,7 +265,9 @@ footer {
   </div>
 </section>
 
-<!-- HOW TO SECTION -->
+<!-- ============================================================
+     HOW-TO SECTION
+     ============================================================ -->
 <section class="how-to-section" aria-label="How to Use the Website">
   <div class="how-to-left">
     <h2>How to use our website</h2>
@@ -433,7 +281,9 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer role="contentinfo" aria-label="Footer Navigation">
   <a href="Story.html">Information</a>
   <a href="registration.html">Registration Page</a>
@@ -442,51 +292,84 @@ footer {
 </footer>
 
 <script>
-// ---------------- SLIDESHOW ----------------
-// Simple slideshow that fades between images
+// ============================================================
+// SLIDESHOW LOGIC
+// Rotates between slideshow images every 4 seconds.
+// ============================================================
 let slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
+
 setInterval(() => {
   slides[currentSlide].classList.remove("active");
   currentSlide = (currentSlide + 1) % slides.length;
   slides[currentSlide].classList.add("active");
 }, 4000);
 
-// ---------------- REVIEWS ----------------
-// Rotates through review quotes
+// ============================================================
+// REVIEW ROTATION
+// Handles switching between user reviews.
+// ============================================================
 const reviews = [
-  "“This site makes finding lost items so much easier!”",
   "“Very organized and easy to use.”",
-  "“A great idea for students and staff.”"
+  "“A great idea for students and staff.”",
+  "“Finally, a central place to check for my lost stuff!”"
 ];
+
+const authors = [
+  "- Shantanu",
+  "- Ms. Clements",
+  "- Nitish"
+];
+
 let reviewIndex = 0;
 const reviewText = document.getElementById("reviewText");
+const reviewAuthor = document.getElementById("reviewAuthor");
 
+// Updates both the review text and the author at the same time
+function updateReview() {
+  reviewText.textContent = reviews[reviewIndex];
+  reviewAuthor.textContent = authors[reviewIndex];
+}
+
+// Moves forward through the reviews
 function nextReview() {
   reviewIndex = (reviewIndex + 1) % reviews.length;
-  reviewText.textContent = reviews[reviewIndex];
+  updateReview();
 }
 
+// Moves backward through the reviews
 function prevReview() {
+  // Adding reviews.length before modulo prevents negative wrap-around issues
   reviewIndex = (reviewIndex - 1 + reviews.length) % reviews.length;
-  reviewText.textContent = reviews[reviewIndex];
+  updateReview();
 }
 
-// ---------------- DROPDOWNS ----------------
-// Basic dropdown toggle logic
+// ============================================================
+// DROPDOWN MENUS
+// Handles opening/closing the dropdowns in the nav bar.
+// ============================================================
 const dropdowns = document.querySelectorAll(".dropdown");
+
+// When a user clicks a dropdown label, toggle that menu open/closed
 dropdowns.forEach(d => {
   d.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
-    e.stopPropagation();
+    e.stopPropagation(); // Prevents the click from closing the menu instantly
     d.classList.toggle("active");
+
+    // Update ARIA attribute so screen readers know the menu state
     d.setAttribute("aria-expanded", d.classList.contains("active"));
   });
 });
-document.addEventListener("click", () => dropdowns.forEach(d => {
-  d.classList.remove("active");
-  d.setAttribute("aria-expanded", "false");
-}));
+
+// Clicking anywhere else on the page closes all dropdowns
+document.addEventListener("click", () => {
+  dropdowns.forEach(d => {
+    d.classList.remove("active");
+    d.setAttribute("aria-expanded", "false");
+  });
+});
 </script>
 
 </body>
 </html>
+
